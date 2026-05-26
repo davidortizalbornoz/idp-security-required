@@ -4,7 +4,10 @@
 
 site_name: Requerimientos Técnicos IdP — FAPI 2.0 (SFA Chile)
 site_description: Análisis normativo FAPI 2.0 y soporte Keycloak para Finanzas Abiertas (CMF Chile)
-docs_dir: .
+site_url: https://davidortizalbornoz.github.io/idp-security-required/
+repo_url: https://github.com/davidortizalbornoz/idp-security-required
+repo_name: idp-security-required
+docs_dir: docs
 
 theme:
   name: material
@@ -14,6 +17,8 @@ theme:
     - navigation.tracking
     - navigation.sections
     - navigation.expand
+    - navigation.top
+    - navigation.indexes
     - toc.integrate
     - toc.follow
     - content.code.copy

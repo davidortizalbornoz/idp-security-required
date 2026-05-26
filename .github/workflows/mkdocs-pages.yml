@@ -1,0 +1,25 @@
+name: Publicar documentación (MkDocs + menú lateral)
+
+on:
+  push:
+    branches: [main, cursor/requerimientos-tecnicos-idp-fapi20-1fac]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Instalar MkDocs Material
+        run: pip install mkdocs mkdocs-material
+
+      - name: Desplegar en GitHub Pages
+        run: mkdocs gh-deploy --force
