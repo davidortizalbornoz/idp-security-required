@@ -3,9 +3,15 @@
 Documento normativo y técnico: **44 requisitos de seguridad** para el *Authorization Server* bajo FAPI 2.0 / CMF Chile.
 
 - **[Documento completo](docs/index.md)** (fuente Markdown del análisis FAPI 2.0)
-- **[Sitio con menú lateral (GitHub Pages)](https://davidortizalbornoz.github.io/idp-security-required/)**
 
----
+Documento técnico que evalúa al menos 44 requisitos de seguridad exigibles al Authorization Server (IdentityServer) bajo FAPI 2.0, en el contexto del Sistema de Finanzas Abiertas (SFA) de la CMF de Chile (NCGN.º 514 y su normativa técnica complementaria, basada en el perfil FAPI 2.0 Security Profile + MessageSigning de la OpenID Foundation).
+
+Para cada ítem se entrega:
+
+1. Contexto técnico (definición, diagrama, ejemplos).
+2. Obligatoriedad en FAPI 2.0 / SFA Chile.
+3. Soporte nativo en Keycloak ≥ 26.x.
+4. Recomendaciones de implementación si no está soportado.
 
 ## Resumen Ejecutivo · Matriz de Cumplimiento
 
