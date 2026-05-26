@@ -58,10 +58,7 @@ Para cada ítem se entrega:
 | 42 | [Gestión del ciclo de vida del consentimiento (Consent API formal)](docs/index.md#punto-42-consent-api) |
 | 43 | [Aislamiento por *tenant* / realm por institución](docs/index.md#punto-43-aislamiento-tenant) |
 | 44 | [Política de claves: separación de roles](docs/index.md#punto-44-politica-claves) |
-
-| A | [Apéndice A — Stack de extensión recomendado para Keycloak](docs/index.md#apendice-a-stack-keycloak) |
-| B | [Apéndice B — Comandos de validación](docs/index.md#apendice-b-comandos-validacion) |
-| C | [Apéndice C — Referencias](docs/index.md#apendice-c-referencias) |
-
-
-| — | [Documento completo](docs/index.md) |
+| 45 | [Apéndice A — Stack de extensión recomendado para Keycloak](docs/index.md#apendice-a-stack-keycloak) |
+| 46 | [Apéndice B — Comandos de validación](docs/index.md#apendice-b-comandos-validacion) |
+| 47 | [Apéndice C — Referencias](docs/index.md#apendice-c-referencias) |
+| 48 | [Documento completo](docs/index.md) |

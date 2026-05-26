@@ -2745,7 +2745,7 @@ Luego en Realm Settings → Keys: añadir Key Provider "java-keystore" apuntando
 
 <a id="apendice-a-stack-keycloak"></a>
 
-## Apéndice A — Stack de extensión recomendado para Keycloak
+# Apéndice A — Stack de extensión recomendado para Keycloak
 
 ```
 keycloak-26.x
@@ -2768,7 +2768,7 @@ keycloak-26.x
 
 <a id="apendice-b-comandos-validacion"></a>
 
-## Apéndice B — Comandos de validación
+# Apéndice B — Comandos de validación
 
 Conformance suite (FAPI 2.0 Security Profile + Message Signing):
 
@@ -2813,7 +2813,7 @@ echo "<jwt-response>" | cut -d'.' -f2 | base64 -d | jq
 
 <a id="apendice-c-referencias"></a>
 
-## Apéndice C — Referencias
+# Apéndice C — Referencias
 
 - OpenID Foundation, **FAPI 2.0 Security Profile**, Final.
 - OpenID Foundation, **FAPI 2.0 Message Signing**.
