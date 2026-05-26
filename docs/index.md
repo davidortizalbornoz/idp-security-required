@@ -2743,6 +2743,8 @@ Luego en Realm Settings → Keys: añadir Key Provider "java-keystore" apuntando
 
 ---
 
+<a id="apendice-a-stack-keycloak"></a>
+
 ## Apéndice A — Stack de extensión recomendado para Keycloak
 
 ```
@@ -2763,6 +2765,8 @@ keycloak-26.x
         spi-x509cert-lookup-provider=nginx
         spi-events-listener-jboss-logging-success-level=info
 ```
+
+<a id="apendice-b-comandos-validacion"></a>
 
 ## Apéndice B — Comandos de validación
 
@@ -2806,6 +2810,8 @@ Decodificar un JARM response:
 ```bash
 echo "<jwt-response>" | cut -d'.' -f2 | base64 -d | jq
 ```
+
+<a id="apendice-c-referencias"></a>
 
 ## Apéndice C — Referencias
 

@@ -59,6 +59,9 @@ Para cada ítem se entrega:
 | 43 | [Aislamiento por *tenant* / realm por institución](docs/index.md#punto-43-aislamiento-tenant) |
 | 44 | [Política de claves: separación de roles](docs/index.md#punto-44-politica-claves) |
 
+| A | [Apéndice A — Stack de extensión recomendado para Keycloak](docs/index.md#apendice-a-stack-keycloak) |
+| B | [Apéndice B — Comandos de validación](docs/index.md#apendice-b-comandos-validacion) |
+| C | [Apéndice C — Referencias](docs/index.md#apendice-c-referencias) |
 
 
-- **[Documento completo](docs/index.md)** (fuente Markdown del análisis FAPI 2.0)
+| — | [Documento completo](docs/index.md) |
