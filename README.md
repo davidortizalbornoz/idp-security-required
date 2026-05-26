@@ -1,9 +1,5 @@
 # Requerimientos Técnicos IdP — FAPI 2.0 (SFA Chile)
 
-Documento normativo y técnico: **44 requisitos de seguridad** para el *Authorization Server* bajo FAPI 2.0 / CMF Chile.
-
-- **[Documento completo](docs/index.md)** (fuente Markdown del análisis FAPI 2.0)
-
 Documento técnico que evalúa al menos 44 requisitos de seguridad exigibles al Authorization Server (IdentityServer) bajo FAPI 2.0, en el contexto del Sistema de Finanzas Abiertas (SFA) de la CMF de Chile (NCGN.º 514 y su normativa técnica complementaria, basada en el perfil FAPI 2.0 Security Profile + MessageSigning de la OpenID Foundation).
 
 Para cada ítem se entrega:
@@ -58,6 +54,11 @@ Para cada ítem se entrega:
 | 38 | [Notificaciones / "Push notification consent" (event API)](docs/index.md#punto-38-notificaciones) |
 | 39 | [Mapeo de `sub` estable y no-PII](docs/index.md#punto-39-mapeo-sub) |
 | 40 | [Validación estricta de `redirect_uri` (exact-match)](docs/index.md#punto-40-redirect-uri) |
+
+
+Documento normativo y técnico: **44 requisitos de seguridad** para el *Authorization Server* bajo FAPI 2.0 / CMF Chile.
+
+- **[Documento completo](docs/index.md)** (fuente Markdown del análisis FAPI 2.0)
 | 41 | [`request_uri` pre-registered prohibido](docs/index.md#punto-41-request-uri-prohibido) |
 | 42 | [Gestión del ciclo de vida del consentimiento (Consent API formal)](docs/index.md#punto-42-consent-api) |
 | 43 | [Aislamiento por *tenant* / realm por institución](docs/index.md#punto-43-aislamiento-tenant) |
