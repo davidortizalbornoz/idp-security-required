@@ -1,0 +1,78 @@
+# Configuración MkDocs — menú lateral (sidebar) para RequerimientosTecnicos_IdP_FAPI20_v1.MD
+# Uso: mkdocs serve  |  mkdocs build
+# Requiere: pip install mkdocs mkdocs-material
+
+site_name: Requerimientos Técnicos IdP — FAPI 2.0 (SFA Chile)
+site_description: Análisis normativo FAPI 2.0 y soporte Keycloak para Finanzas Abiertas (CMF Chile)
+docs_dir: .
+
+theme:
+  name: material
+  language: es
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - toc.integrate
+    - toc.follow
+    - content.code.copy
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 4
+
+plugins:
+  - search
+
+nav:
+  - Documento: RequerimientosTecnicos_IdP_FAPI20_v1.MD
+  - Resumen Ejecutivo · Matriz de Cumplimiento:
+      - Matriz de cumplimiento: RequerimientosTecnicos_IdP_FAPI20_v1.MD#resumen-ejecutivo-matriz-de-cumplimiento
+      - "Punto 1 — Compatible con FAPI 2.0": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-01-compatible-fapi-20
+      - "Punto 2 — Soporte mTLS 1.3": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-02-soporte-mtls-13
+      - "Punto 3 — ES256 / PS256": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-03-algoritmos-firma-es256-ps256
+      - "Punto 4 — Rotación de Refresh Tokens": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-04-rotacion-refresh-tokens
+      - "Punto 5 — Flujos OAuth2 legacy": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-05-inhabilitar-flujos-oauth2-legacy
+      - "Punto 6 — Sender-Constrained Tokens": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-06-sender-constrained-tokens
+      - "Punto 7 — DPoP": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-07-dpop
+      - "Punto 8 — DCR": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-08-dcr
+      - "Punto 9 — Consumo de SSA": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-09-consumo-ssa
+      - "Punto 10 — JARM": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-10-jarm
+      - "Punto 11 — PAR obligatorio": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-11-par-obligatorio
+      - "Punto 12 — PKCE obligatorio": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-12-pkce-obligatorio
+      - "Punto 13 — OCSP": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-13-ocsp
+      - "Punto 14 — OCSP Stapling": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-14-ocsp-stapling
+      - "Punto 15 — Consentimiento granular": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-15-consentimiento-granular
+      - "Punto 16 — RAR (RFC 9396)": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-16-rar
+      - "Punto 17 — Mapeo de scopes": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-17-mapeo-scopes
+      - "Punto 18 — Logs criptográficos": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-18-logs-trazabilidad
+      - "Punto 19 — Issuer en respuestas (RFC 9207)": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-19-identificacion-issuer
+      - "Punto 20 — JAR / Request Object": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-20-jar-request-object
+      - "Punto 21 — Client Authentication": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-21-client-authentication
+      - "Punto 22 — JWKS rotativo": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-22-jwks-rotativo
+      - "Punto 23 — aud y exp en client_assertion": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-23-aud-exp-estrictos
+      - "Punto 24 — CIBA Backchannel": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-24-ciba-backchannel
+      - "Punto 25 — FAPI CIBA + PingMode": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-25-fapi-ciba-pingmode
+      - "Punto 26 — ACR / AMR": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-26-acr-amr
+      - "Punto 27 — WebAuthn / FIDO2": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-27-webauthn-fido2
+      - "Punto 28 — Session Management OIDC": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-28-session-management
+      - "Punto 29 — Front/Back-channel logout": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-29-front-back-channel-logout
+      - "Punto 30 — Algoritmos JWE": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-30-algoritmos-jwe
+      - "Punto 31 — Cripto-agilidad": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-31-cripto-agilidad
+      - "Punto 32 — Rate limiting": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-32-rate-limiting
+      - "Punto 33 — Resiliencia / HA": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-33-resiliencia-ha
+      - "Punto 34 — Time synchronization (NTP)": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-34-time-synchronization
+      - "Punto 35 — Inventario de eventos": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-35-inventario-eventos
+      - "Punto 36 — Pen-testing y conformance": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-36-pen-testing
+      - "Punto 37 — acr urn:cmf:cl:sfa:psd2-sca": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-37-acr-urn-cmf
+      - "Punto 38 — Notificaciones / event API": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-38-notificaciones
+      - "Punto 39 — Mapeo de sub": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-39-mapeo-sub
+      - "Punto 40 — redirect_uri exact-match": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-40-redirect-uri
+      - "Punto 41 — request_uri pre-registered": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-41-request-uri-prohibido
+      - "Punto 42 — Consent API formal": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-42-consent-api
+      - "Punto 43 — Aislamiento por tenant": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-43-aislamiento-tenant
+      - "Punto 44 — Política de claves": RequerimientosTecnicos_IdP_FAPI20_v1.MD#punto-44-politica-claves
