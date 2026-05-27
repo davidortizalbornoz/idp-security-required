@@ -10,13 +10,10 @@
 > 3. Soporte nativo en **Keycloak ≥ 26.x**.
 > 4. Recomendaciones de implementación si no está soportado.
 >
-> Histórico de versiones:
-> - **v1** — 18 requisitos + sección 19 resumen + apéndices (PDF de 26 páginas).
-> - **v2** — PDF distribuible reducido (secciones 1-18 únicamente, 22 páginas).
-> - **v3** — secciones 19-44 expandidas como puntos independientes (59 páginas).
-> - **v4** *(este documento)* — secciones 19-44 con nomenclatura exacta solicitada por el usuario; contenido ampliado en §25 (foco FAPI-CIBA), §28 (incluye OIDC Session Management 1.0) y §29 (incluye Front-Channel Logout).
 
 ---
+
+<a id="tabla-de-acronimos"></a>
 
 ## Tabla de Acrónimos
 
@@ -70,22 +67,22 @@
 | 21 | Client Authentication: `private_key_jwt` y `tls_client_auth` | Sí | ✅ Soportado |
 | 22 | JWKS rotativo del cliente | Sí | ✅ Soportado |
 | 23 | `aud` y `exp` estrictos en `client_assertion` | Sí | ✅ Soportado |
-| 24 | CIBA Backchannel (OIDC Client-Initiated Backchannel Authentication) | Recomendado / Obligatorio en *decoupled* SFA | ✅ Soportado |
-| 25 | FAPI CIBA + PingMode | Sí (FAPI-CIBA: `ping`/`poll`; `push` prohibido) | ✅ Parcial (`push` limitado) |
-| 26 | ACR / AMR — niveles de autenticación | Sí (SCA) | ✅ Soportado |
-| 27 | WebAuthn / FIDO2 para SCA | Recomendado | ✅ Soportado |
-| 28 | Session Management OIDC + `id_token_hint` para logout | Sí | ✅ Soportado |
-| 29 | Front-channel / Back-channel logout (RP-Initiated Logout) | Sí (revocación de sesión) | ✅ Soportado |
+| 24 | CIBA Backchannel (OIDC Client-Initiated Backchannel Authentication) <span style="background-color:#fee2e2;color:#b91c1c;"><strong>NO APLICABLE</strong></span> | Recomendado / Obligatorio en *decoupled* SFA | ✅ Soportado |
+| 25 | FAPI CIBA + PingMode <span style="background-color:#fee2e2;color:#b91c1c;"><strong>NO APLICABLE</strong></span> | Sí (FAPI-CIBA: `ping`/`poll`; `push` prohibido) | ✅ Parcial (`push` limitado) |
+| 26 | ACR / AMR — niveles de autenticación <span style="background-color:#fef3c7;color:#a16207;"><strong>EN CONSULTA DE APLICABILIDAD</strong></span> | Sí (SCA) | ✅ Soportado |
+| 27 | WebAuthn / FIDO2 para SCA <span style="background-color:#fee2e2;color:#b91c1c;"><strong>NO APLICABLE</strong></span> | Recomendado | ✅ Soportado |
+| 28 | Session Management OIDC + `id_token_hint` para logout <span style="background-color:#fee2e2;color:#b91c1c;"><strong>NO APLICABLE</strong></span> | Sí | ✅ Soportado |
+| 29 | Front-channel / Back-channel logout (RP-Initiated Logout) <span style="background-color:#fee2e2;color:#b91c1c;"><strong>NO APLICABLE</strong></span> | Sí (revocación de sesión) | ✅ Soportado |
 | 30 | Algoritmos de cifrado JWE | Opcional / Recomendado para PII | ✅ Soportado |
 | 31 | Cripto-agilidad y *post-quantum readiness* | Roadmap | ⚠️ Parcial |
 | 32 | Rate limiting y anti-bruteforce | Sí | ⚠️ Parcial (login user); requiere gateway |
-| 33 | Resiliencia / HA del Authorization Server | Sí (SLA) | ✅ Soportado (Infinispan + DB HA) |
-| 34 | Time synchronization (NTP) | Implícito | ⚠️ Depende del SO |
+| 33 | Resiliencia / HA del Authorization Server <span style="background-color:#fef3c7;color:#a16207;"><strong>EN CONSULTA DE APLICABILIDAD</strong></span> | Sí (SLA) | ✅ Soportado (Infinispan + DB HA) |
+| 34 | Time synchronization (NTP) <span style="background-color:#fef3c7;color:#a16207;"><strong>EN CONSULTA DE APLICABILIDAD</strong></span> | Implícito | ⚠️ Depende del SO |
 | 35 | Inventario de eventos + retención | Sí | ⚠️ Parcial; requiere storage WORM externo |
 | 36 | Pen-testing y conformance recurrentes | Sí (CMF) | N/A (proceso) |
 | 37 | Soporte de `acr=urn:cmf:cl:sfa:psd2-sca` | Sí (cuando CMF publique) | ✅ Soportado vía mapping |
 | 38 | Notificaciones / "Push notification consent" (event API) | Sí (revocación de consentimiento) | ❌ Requiere SPI + dispatcher |
-| 39 | Mapeo de `sub` estable y no-PII | Sí | ✅ Soportado |
+| 39 | Mapeo de `sub` estable y no-PII <span style="background-color:#fef3c7;color:#a16207;"><strong>EN CONSULTA DE APLICABILIDAD</strong></span> | Sí | ✅ Soportado |
 | 40 | Validación estricta de `redirect_uri` (exact-match) | Sí | ✅ Soportado (bloquear `*` por policy) |
 | 41 | `request_uri` pre-registered prohibido | Sí | ✅ Soportado por profile |
 | 42 | Gestión del ciclo de vida del consentimiento (Consent API formal) | Sí | ❌ Servicio externo |
@@ -1391,7 +1388,7 @@ kc.sh start --cache=ispn --cache-config-file=cache-ispn.xml
 ---
 
 <a id="punto-24-ciba-backchannel"></a>
-# 24. CIBA Backchannel (OIDC Client-Initiated Backchannel Authentication)
+# 24. CIBA Backchannel (OIDC Client-Initiated Backchannel Authentication) <span style="background-color:#fee2e2;color:#b91c1c;"><strong>NO APLICABLE</strong></span>
 
 ## 24.1 Contexto técnico
 
@@ -1467,7 +1464,7 @@ Authentication Flow CIBA: `Authentication → Flows → Direct Grant → Add CIB
 ---
 
 <a id="punto-25-fapi-ciba-pingmode"></a>
-# 25. FAPI CIBA + PingMode
+# 25. FAPI CIBA + PingMode <span style="background-color:#fee2e2;color:#b91c1c;"><strong>NO APLICABLE</strong></span>
 
 ## 25.1 Contexto técnico
 
@@ -1550,7 +1547,7 @@ Authorization: Bearer <client_notification_token>
 ---
 
 <a id="punto-26-acr-amr"></a>
-# 26. ACR / AMR — niveles de autenticación
+# 26. ACR / AMR — niveles de autenticación <span style="background-color:#fef3c7;color:#a16207;"><strong>EN CONSULTA DE APLICABILIDAD</strong></span>
 
 ## 26.1 Contexto técnico
 
@@ -1608,7 +1605,7 @@ Authentication → Flows → "Browser SFA":
 ---
 
 <a id="punto-27-webauthn-fido2"></a>
-# 27. WebAuthn / FIDO2 para SCA
+# 27. WebAuthn / FIDO2 para SCA <span style="background-color:#fee2e2;color:#b91c1c;"><strong>NO APLICABLE</strong></span>
 
 ## 27.1 Contexto técnico
 
@@ -1675,7 +1672,7 @@ Authentication → WebAuthn Policy:
 ---
 
 <a id="punto-28-session-management"></a>
-# 28. Session Management OIDC + `id_token_hint` para logout
+# 28. Session Management OIDC + `id_token_hint` para logout <span style="background-color:#fee2e2;color:#b91c1c;"><strong>NO APLICABLE</strong></span>
 
 ## 28.1 Contexto técnico
 
@@ -1758,7 +1755,7 @@ end_session_endpoint:
 ---
 
 <a id="punto-29-front-back-channel-logout"></a>
-# 29. Front-channel / Back-channel logout (RP-Initiated Logout)
+# 29. Front-channel / Back-channel logout (RP-Initiated Logout) <span style="background-color:#fee2e2;color:#b91c1c;"><strong>NO APLICABLE</strong></span>
 
 ## 29.1 Contexto técnico
 
@@ -2019,7 +2016,7 @@ Respuestas: HTTP `429 Too Many Requests` + `Retry-After`.
 ---
 
 <a id="punto-33-resiliencia-ha"></a>
-# 33. Resiliencia / HA del Authorization Server
+# 33. Resiliencia / HA del Authorization Server <span style="background-color:#fef3c7;color:#a16207;"><strong>EN CONSULTA DE APLICABILIDAD</strong></span>
 
 ## 33.1 Contexto técnico
 
@@ -2085,7 +2082,7 @@ Por ser servicio crítico, el AS necesita:
 ---
 
 <a id="punto-34-time-synchronization"></a>
-# 34. Time synchronization (NTP)
+# 34. Time synchronization (NTP) <span style="background-color:#fef3c7;color:#a16207;"><strong>EN CONSULTA DE APLICABILIDAD</strong></span>
 
 ## 34.1 Contexto técnico
 
@@ -2381,7 +2378,7 @@ Keycloak emite eventos internamente (`EventListenerProvider`), pero no construye
 ---
 
 <a id="punto-39-mapeo-sub"></a>
-# 39. Mapeo de `sub` estable y no-PII
+# 39. Mapeo de `sub` estable y no-PII <span style="background-color:#fef3c7;color:#a16207;"><strong>EN CONSULTA DE APLICABILIDAD</strong></span>
 
 ## 39.1 Contexto técnico
 

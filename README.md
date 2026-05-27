@@ -14,6 +14,7 @@ Para cada ítem se entrega:
 | # | Requisito |
 |---:|---|
 | — | [Resumen ejecutivo – Matriz de cumplimiento](docs/index.md#resumen-ejecutivo-matriz-de-cumplimiento) |
+| 0 | [Tabla de Acrónimos](docs/index.md#tabla-de-acronimos) |
 | 1 | [Compatible con FAPI 2.0](docs/index.md#punto-01-compatible-fapi-20) |
 | 2 | [mTLS 1.3](docs/index.md#punto-02-soporte-mtls-13) |
 | 3 | [ES256 / PS256](docs/index.md#punto-03-algoritmos-firma-es256-ps256) |
@@ -37,22 +38,22 @@ Para cada ítem se entrega:
 | 21 | [Client Authentication: `private_key_jwt` y `tls_client_auth`](docs/index.md#punto-21-client-authentication) |
 | 22 | [JWKS rotativo del cliente](docs/index.md#punto-22-jwks-rotativo) |
 | 23 | [`aud` y `exp` estrictos en `client_assertion`](docs/index.md#punto-23-aud-exp-estrictos) |
-| 24 | [CIBA Backchannel (OIDC Client-Initiated Backchannel Authentication)](docs/index.md#punto-24-ciba-backchannel) |
-| 25 | [FAPI CIBA + PingMode](docs/index.md#punto-25-fapi-ciba-pingmode) |
-| 26 | [ACR / AMR — niveles de autenticación](docs/index.md#punto-26-acr-amr) |
-| 27 | [WebAuthn / FIDO2 para SCA](docs/index.md#punto-27-webauthn-fido2) |
-| 28 | [Session Management OIDC + `id_token_hint` para logout](docs/index.md#punto-28-session-management) |
-| 29 | [Front-channel / Back-channel logout (RP-Initiated Logout)](docs/index.md#punto-29-front-back-channel-logout) |
+| 24 | <a href="docs/index.md#punto-24-ciba-backchannel">CIBA Backchannel (OIDC Client-Initiated Backchannel Authentication) <span style="background-color:#fee2e2;color:#b91c1c;"><strong>NO APLICABLE</strong></span></a> |
+| 25 | <a href="docs/index.md#punto-25-fapi-ciba-pingmode">FAPI CIBA + PingMode <span style="background-color:#fee2e2;color:#b91c1c;"><strong>NO APLICABLE</strong></span></a> |
+| 26 | <a href="docs/index.md#punto-26-acr-amr">ACR / AMR — niveles de autenticación <span style="background-color:#fef3c7;color:#a16207;"><strong>EN CONSULTA DE APLICABILIDAD</strong></span></a> |
+| 27 | <a href="docs/index.md#punto-27-webauthn-fido2">WebAuthn / FIDO2 para SCA <span style="background-color:#fee2e2;color:#b91c1c;"><strong>NO APLICABLE</strong></span></a> |
+| 28 | <a href="docs/index.md#punto-28-session-management">Session Management OIDC + <code>id_token_hint</code> para logout <span style="background-color:#fee2e2;color:#b91c1c;"><strong>NO APLICABLE</strong></span></a> |
+| 29 | <a href="docs/index.md#punto-29-front-back-channel-logout">Front-channel / Back-channel logout (RP-Initiated Logout) <span style="background-color:#fee2e2;color:#b91c1c;"><strong>NO APLICABLE</strong></span></a> |
 | 30 | [Algoritmos de cifrado JWE](docs/index.md#punto-30-algoritmos-jwe) |
 | 31 | [Cripto-agilidad y *post-quantum readiness*](docs/index.md#punto-31-cripto-agilidad) |
 | 32 | [Rate limiting y anti-bruteforce](docs/index.md#punto-32-rate-limiting) |
-| 33 | [Resiliencia / HA del Authorization Server](docs/index.md#punto-33-resiliencia-ha) |
-| 34 | [Time synchronization (NTP)](docs/index.md#punto-34-time-synchronization) |
+| 33 | <a href="docs/index.md#punto-33-resiliencia-ha">Resiliencia / HA del Authorization Server <span style="background-color:#fef3c7;color:#a16207;"><strong>EN CONSULTA DE APLICABILIDAD</strong></span></a> |
+| 34 | <a href="docs/index.md#punto-34-time-synchronization">Time synchronization (NTP) <span style="background-color:#fef3c7;color:#a16207;"><strong>EN CONSULTA DE APLICABILIDAD</strong></span></a> |
 | 35 | [Inventario de eventos + retención](docs/index.md#punto-35-inventario-eventos) |
 | 36 | [Pen-testing y conformance recurrentes](docs/index.md#punto-36-pen-testing) |
 | 37 | [Soporte de `acr=urn:cmf:cl:sfa:psd2-sca`](docs/index.md#punto-37-acr-urn-cmf) |
 | 38 | [Notificaciones / "Push notification consent" (event API)](docs/index.md#punto-38-notificaciones) |
-| 39 | [Mapeo de `sub` estable y no-PII](docs/index.md#punto-39-mapeo-sub) |
+| 39 | <a href="docs/index.md#punto-39-mapeo-sub">Mapeo de <code>sub</code> estable y no-PII <span style="background-color:#fef3c7;color:#a16207;"><strong>EN CONSULTA DE APLICABILIDAD</strong></span></a> |
 | 40 | [Validación estricta de `redirect_uri` (exact-match)](docs/index.md#punto-40-redirect-uri) |
 | 41 | [`request_uri` pre-registered prohibido](docs/index.md#punto-41-request-uri-prohibido) |
 | 42 | [Gestión del ciclo de vida del consentimiento (Consent API formal)](docs/index.md#punto-42-consent-api) |
