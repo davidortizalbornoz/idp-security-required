@@ -9,7 +9,6 @@ Para cada ítem se entrega:
 3. Soporte nativo en Keycloak ≥ 26.x.
 4. Recomendaciones de implementación si no está soportado.
 
-## Resumen Ejecutivo · Matriz de Cumplimiento
 
 | # | Requisito |
 |---:|---|
